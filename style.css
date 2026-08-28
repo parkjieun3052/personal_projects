@@ -246,19 +246,11 @@ body {
 
 
 /* 가로 슬라이드 */
-
 .review-slider {
     display: flex;
-
     gap: 8px;
-
-    overflow-x: auto;
-
-    padding: 0 0 20px;
-
-    scroll-snap-type: x mandatory;
-
-    scrollbar-width: none;
+    width: max-content;
+    animation: reviewSlide 40s linear infinite;
 }
 
 .review-slider::-webkit-scrollbar {
@@ -267,20 +259,18 @@ body {
 
 
 /* 리뷰 카드 */
-
 .review-card {
-    flex: 0 0 78%;
-
+    flex: 0 0 78vw;
     height: 230px;
-
-    scroll-snap-align: center;
 }
 
 .review-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
+}
+@keyframes reviewSlide {
+    from {transform: translateX(0);}
+    to {transform: translateX(-50%);}
 }
