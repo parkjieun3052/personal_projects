@@ -94,7 +94,21 @@
     <section class="reviews">
 
     <h2>REVIEWS</h2>
-    <div class="review-slider" id="reviewSlider"></div>
+        <div class="review-slider">
+
+            <article class="review-card">
+                <img src="images/review1.jpg" alt="">
+            </article>
+
+            <article class="review-card">
+                <img src="images/review2.jpg" alt="">
+            </article>
+
+            <article class="review-card">
+                <img src="images/review3.jpg" alt="">
+            </article>
+
+        </div>
 
     </section>
 
@@ -102,19 +116,19 @@
 
 
 <script>
-
+//메뉴 버튼 
 const menuButton = document.getElementById("menuButton");
 const menuWindow = document.getElementById("menuWindow");
 const menuClose = document.getElementById("menuClose");
 
-menuButton.addEventListener("click", () => {
-    menuWindow.classList.add("active");
-});
+menuButton.addEventListener("click", () => {menuWindow.classList.add("active");});
 
-menuClose.addEventListener("click", () => {
-    menuWindow.classList.remove("active");
-});
+menuClose.addEventListener("click", () => {menuWindow.classList.remove("active");});
 
+//리뷰 슬라이드
+const slider = document.querySelector(".review-slider");
+const reviews = slider.innerHTML;
+slider.innerHTML += reviews;
 
 </script>
 
