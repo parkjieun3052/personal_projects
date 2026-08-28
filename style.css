@@ -1,0 +1,233 @@
+* {box-sizing: border-box;}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: Afacad, cursive;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+
+/* 전체 모바일 화면 */
+
+.mobile-page {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    background: white;
+}
+
+
+/* =========================
+    HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    background: white;
+}
+
+.logo {
+    font-family: 'Zeyada', cursive;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.header button {
+    border: none;
+    background: none;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: 100%;
+    height: 360px;
+
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   BEST ITEMS
+========================= */
+
+.best-items {
+    padding: 12px 12px 20px;
+}
+
+.best-items h2,
+.for-cat h2,
+.reviews h2 {
+    margin: 0 0 12px;
+    font-family: 'Afacad', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* 2 × 2 */
+
+.best-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+}
+
+.item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   LARGE BRAND IMAGE
+========================= */
+
+.brand-image {
+    width: 100%;
+    height: 360px;
+
+    overflow: hidden;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   FOR CAT
+========================= */
+
+.for-cat {
+    padding-top: 0;
+}
+
+.for-cat h2 {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    margin: 0;
+}
+
+.cat-image {
+    width: 100%;
+    height: 170px;
+
+    overflow: hidden;
+}
+
+.cat-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+.reviews h2 {
+    padding-left: 12px;
+}
+
+
+/* 가로 슬라이드 */
+
+.review-slider {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 0 0 20px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+
+.review-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* 리뷰 카드 */
+
+.review-card {
+    flex: 0 0 78%;
+
+    height: 230px;
+
+    scroll-snap-align: center;
+}
+
+.review-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
