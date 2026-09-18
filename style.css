@@ -431,3 +431,141 @@ img {
         height: 220px;
     }
 }
+
+/* =========================
+   카탈로그 목록
+========================= */
+
+.catalog-page {
+    min-height: 100vh;
+    background: #f8f4f0;
+    color: #1d1a18;
+}
+
+.catalog-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 24px 80px;
+}
+
+.catalog-hero {
+    padding: 30px 0 18px;
+}
+
+.catalog-hero h1 {
+    font-family: 'Zeyada', cursive;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.catalog-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0 28px;
+}
+
+.filter-btn {
+    border: 1px solid rgba(29, 26, 24, 0.14);
+    background: transparent;
+    color: #4c453f;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #1d1a18;
+    color: #fff;
+    border-color: #1d1a18;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.catalog-card {
+    position: relative;
+    background: rgba(255,255,255,0.42);
+    border: 1px solid rgba(29,26,24,0.06);
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: 0 12px 22px rgba(41, 32, 25, 0.04);
+}
+
+.card-number {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.card-image-wrap {
+    display: block;
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.card-image-wrap img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .card-image-wrap img {
+    transform: scale(1.03);
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.card-info h3 {
+    font-size: 0.96rem;
+    font-weight: 500;
+}
+
+.card-info p {
+    font-size: 0.82rem;
+    color: #6e645d;
+}
+
+@media (max-width: 980px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .catalog-shell {
+        padding-top: 90px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image-wrap img {
+        height: 280px;
+    }
+}
