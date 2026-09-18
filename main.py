@@ -20,6 +20,6 @@ class MyServer(simple_handler):
         else:
             super().do_GET()
 
-server = http_server(("127.0.0.1",1234), MyServer)
+server = http_server(("127.0.0.1",8000), MyServer)
 print("서버 가동중입니다.")
 server.serve_forever()
