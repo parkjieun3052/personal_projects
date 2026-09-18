@@ -1,302 +1,323 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
 
-    <!-- 모바일 반응형 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AMIERRO</title>
+    <!-- Zeyada 폰트 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- CSS 연결 -->
+    <title>AMIÉ</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
+<div class="mobile-page">
+
+
     <!-- =========================
          HEADER
     ========================== -->
 
-    <header>
+    <header class="header">
 
-        <!-- 로고 -->
-        <a href="index.html" class="logo">
-            AMIERRO
+        <!-- 메뉴 버튼 -->
+        <button
+            class="menu"
+            id="menuButton"
+            aria-label="메뉴 열기"
+        >
+            ☰
+        </button>
+
+
+        <!-- 중앙 로고 (텍스트, Zeyada 폰트, 클릭 비활성) -->
+        <div class="logo" aria-hidden="true">AMIÉ</div>
+
+
+        <!-- 장바구니 -->
+        <a
+            href="cart.html"
+            class="cart"
+            aria-label="장바구니"
+        >
+            <img
+                src="images/cart.svg"
+                alt="장바구니"
+            >
         </a>
-
-
-        <div class="header-right">
-
-            <!-- 장바구니 -->
-            <a href="cart.html" class="cart-btn">
-                🛒
-            </a>
-
-
-            <!-- 메뉴 버튼 -->
-            <button class="menu-btn" id="menuBtn">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
 
     </header>
 
 
 
     <!-- =========================
-         MAIN
+         MENU
+         메인페이지 위에 펼쳐지는 메뉴
     ========================== -->
 
-    <main>
+    <nav
+        class="menu-window"
+        id="menuWindow"
+    >
+
+        <!-- 메뉴 닫기 -->
+        <button
+            class="menu-close"
+            id="menuClose"
+            aria-label="메뉴 닫기"
+        >
+            ×
+        </button>
 
 
-        <!-- 메인 이미지 -->
+        <!-- 메뉴 항목 -->
 
-        <section class="hero">
+        <a href="new.html">
+            NEW
+        </a>
 
-            <a href="product.html">
+        <a href="all-product.html">
+            ALL PRODUCT
+        </a>
+
+        <a href="cat-collection.html">
+            CAT COLLECTION
+        </a>
+
+        <a href="furniture.html">
+            FURNITURE
+        </a>
+
+        <a href="fabric.html">
+            FABRIC
+        </a>
+
+        <a href="mypage.html">
+            MY PAGE
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <a href="all-product.html">
+
+            <img
+                src="images/hero.jpg"
+                alt="AMIÉ furniture"
+            >
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         BEST ITEMS
+    ========================== -->
+
+    <section class="best-items">
+
+        <h2>BEST ITEMS</h2>
+
+
+        <div class="best-grid">
+
+
+            <!-- 상품 1 -->
+
+            <a
+                href="product.html"
+                class="item"
+            >
 
                 <img
-                    src="images/main.jpg"
-                    alt="AMIERRO furniture"
+                    src="images/item1.jpg"
+                    alt="상품 1"
                 >
-
-                <div class="hero-text">
-
-                    <h1>AMIERRO</h1>
-
-                    <p>
-                        Furniture for you and your cat
-                    </p>
-
-                </div>
 
             </a>
 
-        </section>
 
 
+            <!-- 상품 2 -->
 
-        <!-- =========================
-             NEW PRODUCT
-        ========================== -->
+            <a
+                href="product.html"
+                class="item"
+            >
 
-        <section class="section">
+                <img
+                    src="images/item2.jpg"
+                    alt="상품 2"
+                >
 
-            <h2 class="section-title">
-                New
-            </h2>
+            </a>
 
 
-            <div class="product-grid">
 
+            <!-- 상품 3 -->
 
-                <!-- 상품 1 -->
+            <a
+                href="product.html"
+                class="item"
+            >
 
-                <a href="product.html" class="product">
+                <img
+                    src="images/item3.jpg"
+                    alt="상품 3"
+                >
 
-                    <div class="product-image">
+            </a>
 
-                        <img
-                            src="images/product1.jpg"
-                            alt="Cat Lounge Chair"
-                        >
 
-                    </div>
 
-                    <div class="product-info">
+            <!-- 상품 4 -->
 
-                        <p class="product-name">
-                            Cat Lounge Chair
-                        </p>
+            <a
+                href="product.html"
+                class="item"
+            >
 
-                        <p class="product-price">
-                            ₩320,000
-                        </p>
+                <img
+                    src="images/item4.jpg"
+                    alt="상품 4"
+                >
 
-                    </div>
-
-                </a>
-
-
-
-                <!-- 상품 2 -->
-
-                <a href="product.html" class="product">
-
-                    <div class="product-image">
-
-                        <img
-                            src="images/product2.jpg"
-                            alt="Wooden Table"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <p class="product-name">
-                            Wooden Table
-                        </p>
-
-                        <p class="product-price">
-                            ₩480,000
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- 상품 3 -->
-
-                <a href="product.html" class="product">
-
-                    <div class="product-image">
-
-                        <img
-                            src="images/product3.jpg"
-                            alt="Cat Shelf"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <p class="product-name">
-                            Cat Shelf
-                        </p>
-
-                        <p class="product-price">
-                            ₩210,000
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <p>AMIERRO</p>
-
-        <p>
-            Furniture for people and cats.
-        </p>
-
-    </footer>
-
-
-
-    <!-- =========================
-         SIDE MENU
-    ========================== -->
-
-    <!-- 메뉴 뒤쪽 어두운 배경 -->
-    <div
-        class="menu-overlay"
-        id="menuOverlay">
-    </div>
-
-
-    <!-- 오른쪽에서 나오는 메뉴 -->
-    <aside
-        class="side-menu"
-        id="sideMenu">
-
-
-        <!-- 닫기 버튼 -->
-
-        <div class="menu-header">
-
-            <button
-                class="close-btn"
-                id="closeBtn">
-
-                ×
-
-            </button>
+            </a>
 
         </div>
 
-
-        <!-- 메뉴 -->
-
-        <ul class="menu-list">
-
-            <li>
-                <a href="index.html">
-                    Main
-                </a>
-            </li>
-
-            <li>
-                <a href="new.html">
-                    New
-                </a>
-            </li>
-
-            <li>
-                <a href="all-product.html">
-                    All Product
-                </a>
-            </li>
-
-            <li>
-                <a href="cat-collection.html">
-                    Cat Collection
-                </a>
-            </li>
-
-            <li>
-                <a href="furniture.html">
-                    Furniture
-                </a>
-            </li>
-
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="cart.html">
-                    Cart
-                </a>
-            </li>
-
-        </ul>
-
-    </aside>
+    </section>
 
 
 
-    <!-- JS 연결 -->
-    <script src="script.js"></script>
+    <!-- =========================
+         BRAND IMAGE
+    ========================== -->
+
+    <section class="brand-image">
+
+        <a href="about.html">
+
+            <img
+                src="images/brand.jpg"
+                alt="AMIÉ brand"
+            >
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOR CAT
+    ========================== -->
+
+    <section class="for-cat">
+
+        <h2>FOR CAT</h2>
+
+
+        <a
+            href="cat-collection.html"
+            class="cat-image"
+        >
+
+            <img
+                src="images/cat.jpg"
+                alt="Cat Collection"
+            >
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         REVIEWS
+    ========================== -->
+
+    <section class="reviews">
+
+        <h2>REVIEWS</h2>
+
+
+        <div class="review-slider">
+
+
+            <!-- 리뷰 1 -->
+
+            <article class="review-card">
+
+                <img
+                    src="images/review1.jpg"
+                    alt="Review 1"
+                >
+
+            </article>
+
+
+
+            <!-- 리뷰 2 -->
+
+            <article class="review-card">
+
+                <img
+                    src="images/review2.jpg"
+                    alt="Review 2"
+                >
+
+            </article>
+
+
+
+            <!-- 리뷰 3 -->
+
+            <article class="review-card">
+
+                <img
+                    src="images/review3.jpg"
+                    alt="Review 3"
+                >
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =========================
+     JS
+========================= -->
+
+<script src="menu.js"></script>
 
 </body>
 
 </html>
-```
