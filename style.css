@@ -1,115 +1,122 @@
-* {box-sizing: border-box;}
+css
+/* =========================
+   기본 설정
+========================= */
 
-html,
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: #f5f5f5;
-    font-family: Afacad, cursive;
-    font-size: 24px;
-    font-weight: 400;
+    font-family: Arial, sans-serif;
+
+    background: #f8f6f1;
+
+    color: #222;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-
-/* 전체 모바일 화면 */
-
-.mobile-page {
-    width: 100%;
-    max-width: 430px;
-    min-height: 100vh;
-    margin: 0 auto;
-
-    background: white;
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 
 /* =========================
-    HEADER
+   HEADER
 ========================= */
 
-.header {
+header {
     width: 100%;
-    height: 52px;
+    height: 80px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 12px;
+    padding: 0 40px;
 
-    background: white;
-}
+    background: #f8f6f1;
 
-.logo {
-    font-family: 'Zeyada', cursive;
-    font-size: 36px;
-    font-weight: 400;
-}
-
-.header button {
-    border: none;
-    background: none;
-
-    font-size: 20px;
-}
-.cart {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.cart img {
-    width: 16px;
-    height: auto;
-    display: block;
-}
-
-.menu-window {
     position: fixed;
+
     top: 0;
     left: 0;
 
-    width: 350px;
-    height: 100vh;
+    z-index: 100;
+}
 
-    background: white;
-    padding: 80px 40px;
+
+/* 로고 */
+
+.logo {
+    font-size: 28px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+}
+
+
+/* 오른쪽 버튼 */
+
+.header-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* 장바구니 */
+
+.cart-btn {
+    font-size: 22px;
+}
+
+
+/* 메뉴 버튼 */
+
+.menu-btn {
+    width: 35px;
+    height: 30px;
 
     display: flex;
+
     flex-direction: column;
-    gap: 30px;
 
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    justify-content: center;
 
-    z-index: 9999;
+    gap: 6px;
 }
 
-.menu-window.active {
-    transform: translateX(0);
+
+.menu-btn span {
+    width: 100%;
+    height: 1px;
+
+    background: #222;
+
+    display: block;
 }
 
-.menu-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
 
-    border: none;
-    background: none;
-    font-size: 30px;
-    cursor: pointer;
+/* =========================
+   MAIN
+========================= */
+
+main {
+    padding-top: 80px;
 }
 
-.menu-window a {
-    text-decoration: none;
-    color: #111;
-    font-size: 20px;
-}
 
 /* =========================
    HERO
@@ -117,160 +124,411 @@ body {
 
 .hero {
     width: 100%;
-    height: 360px;
+
+    height: calc(100vh - 80px);
+
+    position: relative;
 
     overflow: hidden;
 }
+
 
 .hero img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+
     display: block;
+
+    transition: transform 0.5s;
+}
+
+
+/* 이미지에 마우스를 올렸을 때 */
+
+.hero:hover img {
+    transform: scale(1.02);
+}
+
+
+/* 메인 글자 */
+
+.hero-text {
+    position: absolute;
+
+    left: 50px;
+    bottom: 50px;
+
+    color: white;
+}
+
+
+.hero-text h1 {
+    font-size: clamp(35px, 6vw, 80px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+}
+
+
+.hero-text p {
+    margin-top: 10px;
+
+    font-size: 15px;
 }
 
 
 /* =========================
-   BEST ITEMS
+   PRODUCT
 ========================= */
 
-.best-items {
-    padding: 12px 12px 20px;
+.section {
+    padding: 100px 40px;
 }
 
-.best-items h2,
-.for-cat h2,
-.reviews h2 {
-    margin: 0 0 12px;
-    font-family: 'Afacad', sans-serif;
-    font-size: 24px;
+
+.section-title {
+    font-size: 28px;
+
     font-weight: 400;
+
+    margin-bottom: 40px;
 }
 
 
-/* 2 × 2 */
+/* 상품 그리드 */
 
-.best-grid {
+.product-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 8px;
+    gap: 25px;
 }
 
-.item {
+
+/* 상품 */
+
+.product {
+    cursor: pointer;
+}
+
+
+/* 상품 이미지 */
+
+.product-image {
     width: 100%;
+
     aspect-ratio: 1 / 1;
-}
-
-.item img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =========================
-   LARGE BRAND IMAGE
-========================= */
-
-.brand-image {
-    width: 100%;
-    height: 360px;
 
     overflow: hidden;
+
+    background: #eee;
 }
 
-.brand-image img {
+
+.product-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 
     display: block;
+
+    transition: transform 0.4s;
+}
+
+
+/* 상품 이미지 마우스 효과 */
+
+.product:hover img {
+    transform: scale(1.04);
+}
+
+
+/* 상품 정보 */
+
+.product-info {
+    padding-top: 15px;
+}
+
+
+.product-name {
+    font-size: 16px;
+}
+
+
+.product-price {
+    margin-top: 5px;
+
+    color: #777;
 }
 
 
 /* =========================
-   FOR CAT
+   SIDE MENU
 ========================= */
 
-.for-cat {
-    padding-top: 0;
+
+/* 메뉴 뒤쪽 배경 */
+
+.menu-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 150;
 }
 
-.for-cat h2 {
-    height: 42px;
 
+/* 메뉴가 열렸을 때 */
+
+.menu-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* 오른쪽 메뉴 */
+
+.side-menu {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 420px;
+
+    max-width: 85%;
+
+    height: 100vh;
+
+    background: #f8f6f1;
+
+    padding: 40px;
+
+    transform: translateX(100%);
+
+    transition: transform 0.4s ease;
+
+    z-index: 200;
+}
+
+
+/* 메뉴가 열렸을 때 */
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+
+/* 메뉴 상단 */
+
+.menu-header {
     display: flex;
-    align-items: center;
 
-    padding: 0 12px;
-
-    margin: 0;
+    justify-content: flex-end;
 }
 
-.cat-image {
-    width: 100%;
-    height: 170px;
 
-    overflow: hidden;
+/* 닫기 버튼 */
+
+.close-btn {
+    font-size: 28px;
+
+    font-weight: 200;
 }
 
-.cat-image img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+/* 메뉴 리스트 */
 
-    display: block;
+.menu-list {
+    list-style: none;
+
+    margin-top: 70px;
+}
+
+
+.menu-list li {
+    margin-bottom: 30px;
+}
+
+
+.menu-list a {
+    font-size: 24px;
+
+    transition: opacity 0.2s;
+}
+
+
+/* 메뉴 마우스 효과 */
+
+.menu-list a:hover {
+    opacity: 0.5;
 }
 
 
 /* =========================
-   REVIEWS
+   FOOTER
 ========================= */
 
-.reviews {
-    padding-top: 60px;
-    overflow: hidden;
-}
+footer {
+    padding: 60px 40px;
 
-.reviews h2 {
-    padding-left: 12px;
-}
+    border-top: 1px solid #ddd;
 
-
-/* 가로 슬라이드 */
-.review-slider {
-    display: flex;
-    gap: 8px;
-    width: max-content;
-    animation: reviewSlide 40s linear infinite;
-}
-
-.review-slider::-webkit-scrollbar {
-    display: none;
+    color: #777;
 }
 
 
-/* 리뷰 카드 */
-.review-card {
-    flex: 0 0 78vw;
-    height: 230px;
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 0 25px;
+    }
+
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .section {
+        padding: 80px 25px;
+    }
+
 }
 
-.review-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    /* 헤더 */
+
+    header {
+        height: 65px;
+
+        padding: 0 18px;
+    }
+
+
+    main {
+        padding-top: 65px;
+    }
+
+
+    /* 로고 */
+
+    .logo {
+        font-size: 22px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* 오른쪽 */
+
+    .header-right {
+        gap: 15px;
+    }
+
+
+    .cart-btn {
+        font-size: 19px;
+    }
+
+
+    /* 메인 이미지 */
+
+    .hero {
+        height: calc(100vh - 65px);
+    }
+
+
+    .hero-text {
+        left: 20px;
+
+        bottom: 25px;
+    }
+
+
+    .hero-text p {
+        font-size: 13px;
+    }
+
+
+    /* 상품 */
+
+    .section {
+        padding: 60px 18px;
+    }
+
+
+    .section-title {
+        font-size: 23px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+
+    .product-name {
+        font-size: 14px;
+    }
+
+
+    .product-price {
+        font-size: 13px;
+    }
+
+
+    /* 모바일 메뉴 */
+
+    .side-menu {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 25px 20px;
+    }
+
+
+    .menu-list {
+        margin-top: 60px;
+    }
+
+
+    .menu-list a {
+        font-size: 26px;
+    }
+
 }
-@keyframes reviewSlide {
-    from {transform: translateX(0);}
-    to {transform: translateX(-50%);}
-}
+
